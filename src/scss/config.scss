@@ -1,0 +1,8 @@
+$primary-color: #000;
+$secondary-color: #6b1c13;
+$neutral-color: #ffffff;
+$notification-color: #1d8a57;
+
+@mixin transition-ease {
+  transition: 1s ease-in-out;
+}

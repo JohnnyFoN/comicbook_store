@@ -1,0 +1,34 @@
+$primary-color: #000;
+$secondary-color: #6b1c13;
+$neutral-color: #ffffff;
+$notification-color: #1d8a57;
+
+.basketProducts {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+
+  &Table {
+    width: 80%;
+    padding-top: 1rem;
+  }
+}
+
+tbody tr td {
+  font-size: 18px;
+  img {
+    height: 25%;
+  }
+}
+
+tr {
+  border-bottom: 1pt solid black;
+}
+.btnDelete {
+  background-color: $secondary-color;
+  color: $neutral-color;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 20px;
+}

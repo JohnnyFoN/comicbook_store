@@ -1,0 +1,47 @@
+$primary-color: #000;
+$secondary-color: #6b1c13;
+$neutral-color: #ffffff;
+$notification-color: #1d8a57;
+$thin-black-border: "1px solid black";
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid $primary-color;
+  align-items: center;
+
+  .navbarElement {
+    transition: all 0.4s ease;
+    padding: 10px 25px;
+    text-decoration: none;
+    color: $secondary-color;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    width: 125px;
+    text-align: center;
+    border-radius: 14px;
+
+    &:hover {
+      color: $neutral-color;
+      background-color: $secondary-color;
+    }
+
+    .bucketItemsNumber {
+      color: $secondary-color;
+    }
+  }
+
+  .logo {
+    margin-right: auto;
+
+    &:hover {
+      background-color: $neutral-color;
+    }
+  }
+
+  #basket:hover {
+    background-color: $neutral-color;
+  }
+}

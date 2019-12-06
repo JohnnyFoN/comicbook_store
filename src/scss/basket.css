@@ -1,0 +1,39 @@
+.basketProducts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.basketProductsTable {
+  width: 80%;
+  padding-top: 1rem;
+}
+
+tbody tr td {
+  font-size: 18px;
+}
+
+tbody tr td img {
+  height: 25%;
+}
+
+tr {
+  border-bottom: 1pt solid black;
+}
+
+.btnDelete {
+  background-color: #6b1c13;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 20px;
+}
+/*# sourceMappingURL=basket.css.map */
