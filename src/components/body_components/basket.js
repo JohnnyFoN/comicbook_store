@@ -1,25 +1,41 @@
 import React, { Component } from "react";
+import { throwStatement } from "@babel/types";
 
 class Basket extends Component {
   constructor(props) {
     super(props);
     this.state = {
       comics: props.marvelProducts,
-      total: 0
+      total: 0,
+      basketComics: []
     };
   }
 
   componentDidMount() {
+    var totalPrice = 0;
+    var allComics = this.state.comics;
+    var display = [];
     const chosenComics = JSON.parse(
       localStorage.getItem("storageArray") || "[]"
     );
-    console.log(chosenComics);
+    for (var x = 0; x < allComics.length; x++) {
+      for (var y = 0; y < chosenComics.length; y++) {
+        if (allComics[x].id === chosenComics[y]) {
+          display.push(allComics[x]);
+          totalPrice += allComics[x].price;
+        }
+      }
+    }
+    console.log(display);
+    this.setState({
+      basketComics: display,
+      total: totalPrice
+    });
   }
 
   populateTableOfProducts() {
-    let products = this.state.comics || [];
+    let products = this.state.basketComics || [];
     return products.map((product, index) => {
-      //const { userId, title, body, id } = post;key={id}
       return (
         <tr className="basketProductsTableBodyRow">
           <td align="center">
