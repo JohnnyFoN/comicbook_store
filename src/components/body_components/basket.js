@@ -6,30 +6,14 @@ class Basket extends Component {
     super(props);
     this.state = {
       comics: props.marvelProducts,
-      total: 0,
-      basketComics: []
+      total: props.totalPrice,
+      basketComics: props.basketComics
     };
   }
 
-  componentDidMount() {
-    var totalPrice = 0;
-    var allComics = this.state.comics;
-    var display = [];
-    const chosenComics = JSON.parse(
-      localStorage.getItem("storageArray") || "[]"
-    );
-    for (var x = 0; x < allComics.length; x++) {
-      for (var y = 0; y < chosenComics.length; y++) {
-        if (allComics[x].id === chosenComics[y]) {
-          display.push(allComics[x]);
-          totalPrice += allComics[x].price;
-        }
-      }
-    }
-    console.log(display);
+  componentWillReceiveProps(nextProps) {
     this.setState({
-      basketComics: display,
-      total: totalPrice
+      basketComics: nextProps.basketComics
     });
   }
 
@@ -44,7 +28,12 @@ class Basket extends Component {
           <td align="left">{product.seriesName + ": " + product.title}</td>
           <td align="center">{product.price}$</td>
           <td className="buttons" align="center">
-            <button className="btnDelete">X</button>
+            <button
+              className="btnDelete"
+              // onClick={e => this.props.removeFromBasket(product.id)}
+            >
+              X
+            </button>
           </td>
         </tr>
       );
@@ -53,14 +42,18 @@ class Basket extends Component {
 
   render() {
     return (
-      <div className="basketProducts">
-        <table className="basketProductsTable">
-          <tbody className="basketPsroductsTableBody">
-            {this.populateTableOfProducts()}
-          </tbody>
-        </table>
-        <div>
-          <span>TOTAL: {this.state.total}$</span>
+      <div>
+        <div className="totalCost">
+          <span className="totalCostTitle">TOTAL: </span>
+          <span className="totalCostValue"> {this.state.total}$</span>
+          {/* <button className="totalCostDeleteAll">Empty the basket</button> */}
+        </div>
+        <div className="basketProducts">
+          <table className="basketProductsTable">
+            <tbody className="basketPsroductsTableBody">
+              {this.populateTableOfProducts()}
+            </tbody>
+          </table>
         </div>
       </div>
     );

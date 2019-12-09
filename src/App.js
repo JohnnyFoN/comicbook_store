@@ -122,27 +122,85 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      marvelProducts: marvelComics
+      marvelProducts: marvelComics,
+      basketComics: 0,
+      totalPrice: 0,
+      numberOfProductsInBasket: 0
     };
   }
+
+  componentDidMount() {
+    this.changeBasket();
+  }
+
+  //clearAll!!!!
+  // removeFromBasket = comic => {
+  //   var storageArray = JSON.parse(localStorage.getItem("storageArray") || "[]");
+  //   localStorage.removeItem(
+  //     "storageArray",
+  //     JSON.stringify([...storageArray, comic.id])
+  //   );
+  //   this.changeBasket();
+  // };
+
+  addToBasket = comic => {
+    var storageArray = JSON.parse(localStorage.getItem("storageArray") || "[]");
+    localStorage.setItem(
+      "storageArray",
+      JSON.stringify([...storageArray, comic.id])
+    );
+    this.changeBasket();
+  };
+
+  changeBasket = () => {
+    var totalPrice = 0;
+    var allComics = this.state.marvelProducts;
+    var display = [];
+    const chosenComics = JSON.parse(
+      localStorage.getItem("storageArray") || "[]"
+    );
+    for (var x = 0; x < allComics.length; x++) {
+      for (var y = 0; y < chosenComics.length; y++) {
+        if (allComics[x].id === chosenComics[y]) {
+          display.push(allComics[x]);
+          totalPrice += parseFloat(allComics[x].price);
+        }
+      }
+    }
+    this.setState({
+      basketComics: display,
+      totalPrice: totalPrice.toFixed(2),
+      numberOfProductsInBasket: display.length
+    });
+  };
+
   render() {
     return (
       <div className="menu">
         <BrowserRouter>
-          <Navbar />
+          <Navbar
+            numberOfProductsInBasket={this.state.numberOfProductsInBasket}
+          />
           <Switch>
             <Route path="/" component={Home} exact />
             <Route
               path="/marvel_comics"
               component={() => (
-                <MarvelComics marvelProducts={this.state.marvelProducts} />
+                <MarvelComics
+                  marvelProducts={this.state.marvelProducts}
+                  addToBasket={this.addToBasket}
+                />
               )}
             />
             <Route path="/contact" component={Contact} />
             <Route
               path="/basket"
               component={() => (
-                <Basket marvelProducts={this.state.marvelProducts} />
+                <Basket
+                  basketComics={this.state.basketComics}
+                  totalPrice={this.state.totalPrice}
+                  removeFromBasket={this.removeFromBasket}
+                />
               )}
             />
           </Switch>

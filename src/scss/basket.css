@@ -36,4 +36,40 @@ tr {
   cursor: pointer;
   font-size: 20px;
 }
+
+.totalCost {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 15px;
+  height: 30px;
+}
+
+.totalCostTitle {
+  font-weight: bold;
+  color: #6b1c13;
+  font-size: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.totalCostValue {
+  padding-left: 10px;
+  font-weight: bold;
+  color: #1d8a57;
+  font-size: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.totalCostDeleteAll {
+  background-color: #ffffff;
+  color: #000;
+  font-size: 15px;
+  border: 2px solid #6b1c13;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-left: 15px;
+}
 /*# sourceMappingURL=basket.css.map */

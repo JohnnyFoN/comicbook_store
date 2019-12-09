@@ -4,6 +4,8 @@ $neutral-color: #ffffff;
 $notification-color: #1d8a57;
 $thin-black-border: "1px solid black";
 
+$appFont: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -16,7 +18,7 @@ $thin-black-border: "1px solid black";
     padding: 10px 25px;
     text-decoration: none;
     color: $secondary-color;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: $appFont;
     font-weight: bold;
     font-size: 20px;
     width: 125px;

@@ -7,7 +7,17 @@ import logo3 from "../../resources/60logo3.png";
 class Navbar extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      numberOfProductsInBasket: 0
+    };
   }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      numberOfProductsInBasket: nextProps.numberOfProductsInBasket
+    });
+  }
+
   render() {
     return (
       <div className="navbar">
@@ -26,7 +36,9 @@ class Navbar extends Component {
         <NavLink className="navbarElement" id="basket" to="/basket">
           <div>
             <img src={basket}></img>
-            <span className="bucketItemsNumber">9</span>
+            <span className="bucketItemsNumber">
+              {this.state.numberOfProductsInBasket}
+            </span>
           </div>
         </NavLink>
       </div>

@@ -3,6 +3,8 @@ $secondary-color: #6b1c13;
 $neutral-color: #ffffff;
 $notification-color: #1d8a57;
 
+$appFont: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
 .basketProducts {
   display: flex;
   justify-content: center;
@@ -31,4 +33,35 @@ tr {
   border-radius: 50px;
   cursor: pointer;
   font-size: 20px;
+}
+
+.totalCost {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  height: 30px;
+
+  &Title {
+    font-weight: bold;
+    color: $secondary-color;
+    font-size: 20px;
+    font-family: $appFont;
+  }
+
+  &Value {
+    padding-left: 10px;
+    font-weight: bold;
+    color: $notification-color;
+    font-size: 20px;
+    font-family: $appFont;
+  }
+}
+.totalCostDeleteAll {
+  background-color: $neutral-color;
+  color: $primary-color;
+  font-size: 15px;
+  border: 2px solid $secondary-color;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-left: 15px;
 }

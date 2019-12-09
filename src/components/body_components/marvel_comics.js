@@ -10,14 +10,6 @@ class MarvelComics extends Component {
     };
   }
 
-  addToBasket = comic => {
-    var storageArray = JSON.parse(localStorage.getItem("storageArray") || "[]");
-    localStorage.setItem(
-      "storageArray",
-      JSON.stringify([...storageArray, comic.id])
-    );
-  };
-
   getImages = () => {
     var comicList = this.state.comics;
     return comicList.map(comic => (
@@ -34,7 +26,10 @@ class MarvelComics extends Component {
           <button className="btnAdd">
             <img src={eye}></img>
           </button>
-          <button className="btnAdd" onClick={e => this.addToBasket(comic)}>
+          <button
+            className="btnAdd"
+            onClick={e => this.props.addToBasket(comic)}
+          >
             <img src={basket}></img>
           </button>
         </div>
