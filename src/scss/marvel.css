@@ -11,6 +11,7 @@
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  padding-top: 80px;
 }
 
 .product {
@@ -80,5 +81,22 @@
   background-color: lightgray;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+}
+
+.product .btnAdd:focus {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+  -webkit-transition: -webkit-transform 1s ease-out;
+  transition: -webkit-transform 1s ease-out;
+  transition: transform 1s ease-out;
+  transition: transform 1s ease-out, -webkit-transform 1s ease-out;
+  background-color: #ff1a1a;
+  border: none;
+  outline: none;
+}
+
+.product .btnAdd:visited {
+  border: none;
+  outline: none;
 }
 /*# sourceMappingURL=marvel.css.map */

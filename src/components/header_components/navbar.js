@@ -3,19 +3,14 @@ import { NavLink } from "react-router-dom";
 
 import basket from "../../resources/50basket.png";
 import logo3 from "../../resources/60logo3.png";
+import dollar32 from "../../resources/dollar32.jpg";
 
 class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      numberOfProductsInBasket: 0
+      //numberOfProductsInBasket: props.numberOfProductsInBasket
     };
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      numberOfProductsInBasket: nextProps.numberOfProductsInBasket
-    });
   }
 
   render() {
@@ -37,7 +32,7 @@ class Navbar extends Component {
           <div>
             <img src={basket}></img>
             <span className="bucketItemsNumber">
-              {this.state.numberOfProductsInBasket}
+              {this.props.numberOfProductsInBasket}
             </span>
           </div>
         </NavLink>

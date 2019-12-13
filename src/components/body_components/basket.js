@@ -11,26 +11,29 @@ class Basket extends Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      basketComics: nextProps.basketComics
-    });
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   this.setState({
+  //     basketComics: nextProps.basketComics
+  //   });
+  // }
 
   populateTableOfProducts() {
-    let products = this.state.basketComics || [];
+    let products = this.props.basketComics || [];
     return products.map((product, index) => {
       return (
-        <tr className="basketProductsTableBodyRow">
+        <tr className="basketProductsTableBodyRow" key={product.id}>
+          <td className="times" align="center">
+            {product.count} <span>X</span>{" "}
+          </td>
           <td align="center">
             <img src={product.image}></img>
           </td>
           <td align="left">{product.seriesName + ": " + product.title}</td>
-          <td align="center">{product.price}$</td>
+          <td align="center">{(product.count * product.price).toFixed(2)}$</td>
           <td className="buttons" align="center">
             <button
               className="btnDelete"
-              // onClick={e => this.props.removeFromBasket(product.id)}
+              onClick={() => this.props.removeFromBasket(product)} // poziva se pri kreiranju reda ?????
             >
               X
             </button>
@@ -45,8 +48,7 @@ class Basket extends Component {
       <div>
         <div className="totalCost">
           <span className="totalCostTitle">TOTAL: </span>
-          <span className="totalCostValue"> {this.state.total}$</span>
-          {/* <button className="totalCostDeleteAll">Empty the basket</button> */}
+          <span className="totalCostValue"> {this.props.totalPrice}$</span>
         </div>
         <div className="basketProducts">
           <table className="basketProductsTable">

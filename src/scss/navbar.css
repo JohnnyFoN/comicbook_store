@@ -10,6 +10,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: fixed;
+  background-color: #ffffff;
 }
 
 .navbar .navbarElement {
@@ -45,5 +47,15 @@
 
 .navbar #basket:hover {
   background-color: #ffffff;
+}
+
+.navbar .activePage {
+  background-color: #6b1c13;
+  color: #ffffff;
+}
+
+.navbarElement:active {
+  background-color: #6b1c13;
+  color: #ffffff;
 }
 /*# sourceMappingURL=navbar.css.map */

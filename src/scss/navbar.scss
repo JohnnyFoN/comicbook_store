@@ -12,6 +12,8 @@ $appFont: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   width: 100%;
   border-bottom: 1px solid $primary-color;
   align-items: center;
+  position: fixed;
+  background-color: $neutral-color;
 
   .navbarElement {
     transition: all 0.4s ease;
@@ -46,4 +48,13 @@ $appFont: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   #basket:hover {
     background-color: $neutral-color;
   }
+  .activePage {
+    background-color: $secondary-color;
+    color: $neutral-color;
+  }
+}
+
+.navbarElement:active {
+  background-color: $secondary-color;
+  color: $neutral-color;
 }

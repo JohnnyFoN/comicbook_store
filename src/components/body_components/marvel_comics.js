@@ -10,7 +10,7 @@ class MarvelComics extends Component {
     };
   }
 
-  getImages = () => {
+  getProducts = () => {
     var comicList = this.state.comics;
     return comicList.map(comic => (
       <div className="product">
@@ -38,7 +38,7 @@ class MarvelComics extends Component {
   };
 
   render() {
-    return <div className="products">{this.getImages()}</div>;
+    return <div className="products">{this.getProducts()}</div>;
   }
 }
 

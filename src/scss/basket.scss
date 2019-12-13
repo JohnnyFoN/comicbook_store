@@ -11,20 +11,24 @@ $appFont: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   flex-direction: row;
 
   &Table {
-    width: 80%;
-    padding-top: 1rem;
+    width: 90%;
+    padding-top: 50px;
   }
 }
 
 tbody tr td {
   font-size: 18px;
   img {
+    padding-top: 5px;
     height: 25%;
   }
 }
 
 tr {
-  border-bottom: 1pt solid black;
+  &:nth-child(odd) {
+    background-color: #f7f3eb;
+    color: $secondary-color;
+  }
 }
 .btnDelete {
   background-color: $secondary-color;
@@ -36,9 +40,10 @@ tr {
 }
 
 .totalCost {
+  margin-right: 25px;
   display: flex;
-  justify-content: center;
-  padding-top: 15px;
+  justify-content: flex-end;
+  padding-top: 80px;
   height: 30px;
 
   &Title {
@@ -64,4 +69,15 @@ tr {
   border-radius: 20px;
   cursor: pointer;
   margin-left: 15px;
+}
+
+.times {
+  font-family: $appFont;
+  font-size: 20px;
+  color: $notification-color;
+  font-weight: bold;
+
+  span {
+    color: $secondary-color;
+  }
 }

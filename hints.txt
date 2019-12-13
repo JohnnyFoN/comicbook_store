@@ -1,0 +1,9 @@
+
+
+  selected(selected) => {
+    this.setState(selected)
+  }
+
+this.props.router... naziv rute
+
+className={`navbarElement ${nazivrute === 'marvel' ? 'active' : null}`} onClick={() => this.selected('basket')}

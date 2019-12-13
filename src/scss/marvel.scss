@@ -3,11 +3,14 @@ $secondary-color: #6b1c13;
 $neutral-color: #ffffff;
 $notification-color: #1d8a57;
 
+$appFont: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
 .products {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding-top: 80px;
 }
 
 .product {
@@ -19,11 +22,6 @@ $notification-color: #1d8a57;
   &Cover {
     display: flex;
     justify-content: center;
-
-    // img {
-    //   width: 50%;
-    //   height: 50%;
-    // }
   }
 
   &Info {
@@ -56,5 +54,19 @@ $notification-color: #1d8a57;
         transition: all 0.4s ease;
       }
     }
+  }
+
+  .btnAdd:focus {
+    transform: rotate(360deg);
+    //animation: ease;
+    transition: transform 1s ease-out;
+    background-color: #ff1a1a;
+    border: none;
+    outline: none;
+  }
+
+  .btnAdd:visited {
+    border: none;
+    outline: none;
   }
 }

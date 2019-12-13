@@ -12,8 +12,8 @@
 }
 
 .basketProductsTable {
-  width: 80%;
-  padding-top: 1rem;
+  width: 90%;
+  padding-top: 50px;
 }
 
 tbody tr td {
@@ -21,11 +21,13 @@ tbody tr td {
 }
 
 tbody tr td img {
+  padding-top: 5px;
   height: 25%;
 }
 
-tr {
-  border-bottom: 1pt solid black;
+tr:nth-child(odd) {
+  background-color: #f7f3eb;
+  color: #6b1c13;
 }
 
 .btnDelete {
@@ -38,13 +40,14 @@ tr {
 }
 
 .totalCost {
+  margin-right: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding-top: 15px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-top: 80px;
   height: 30px;
 }
 
@@ -71,5 +74,16 @@ tr {
   border-radius: 20px;
   cursor: pointer;
   margin-left: 15px;
+}
+
+.times {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  color: #1d8a57;
+  font-weight: bold;
+}
+
+.times span {
+  color: #6b1c13;
 }
 /*# sourceMappingURL=basket.css.map */
